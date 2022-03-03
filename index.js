@@ -1,27 +1,13 @@
-// Code your solution here
-// function findMatching(drivers, str){
-//     let item = item.toUpperCase;
-//     for (item of drivers){
-//       if(item === str){
 
-//       }
-//     }
-// }
-// function findMatching(drivers, str){
-//     const upperCased = [];
-//     for (let driver of drivers){
-//         upperCased.push(driver.toUpperCase());
-//     }
-//     str = str.toUpperCase();
-//     const result = drivers.filter(driver => driver === str);
-//     return result;
-// }
 function findMatching(drivers, str){
-    const upperCased = [];
-    for (let driver of drivers){
-        upperCased.push(driver.toUpperCase());
-    }
-    str = str.toUpperCase();
-    const result = upperCased.filter(driver => driver === str);
+    const result = drivers.filter(driver => driver.toUpperCase() === str.toUpperCase());
     return result;
+}
+function fuzzyMatch(drivers, str){
+    const result = drivers.filter(driver => driver.charAt(0) === str.charAt(0))
+    return result;
+}
+function matchName(drivers, str) {
+const result = drivers.filter(driver => driver.name === str)
+return result;
 }
